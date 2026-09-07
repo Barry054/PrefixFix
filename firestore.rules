@@ -1,0 +1,11 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // PrefixFix never lets the client touch Firestore directly — all reads
+    // and writes happen in Cloud Functions with the Admin SDK. Client SDK
+    // access is therefore denied entirely.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

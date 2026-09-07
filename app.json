@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "PrefixFix",
+    "slug": "prefixfix",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "prefixfix",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "gm.prefixfix.app",
+      "infoPlist": {
+        "NSContactsUsageDescription": "PrefixFix reads your contacts to update their phone numbers to the new 9-digit format, and backs them up before any change."
+      }
+    },
+    "android": {
+      "package": "gm.prefixfix.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "plugins": [
+      [
+        "expo-contacts",
+        {
+          "contactsPermission": "PrefixFix reads your contacts to update their phone numbers to the new 9-digit format, and backs them up before any change."
+        }
+      ]
+    ],
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
