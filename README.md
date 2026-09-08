@@ -1,8 +1,8 @@
-\# PrefixFix
+﻿# PrefixFix
 
 
 
-\### Gambian Mobile Number Migration Assistant
+### Gambian Mobile Number Migration Assistant
 
 
 
@@ -14,83 +14,83 @@ Instead of manually editing hundreds of contacts, PrefixFix scans the device add
 
 
 
-\## Project Status
+## Project Status
 
 
 
-\*\*Version:\*\* 1.0.0
+**Version:** 1.0.0
 
-\*\*Platform:\*\* Android
+**Platform:** Android
 
-\*\*License:\*\* MIT
+**License:** MIT
 
-\*\*Status:\*\* Functional and tested on physical Android devices
-
-
+**Status:** Functional and tested on physical Android devices
 
 
 
-\## Table of Contents
+
+
+## Table of Contents
 
 
 
-\* \[Overview](#overview)
+* [Overview](#overview)
 
-\* \[The Problem](#the-problem)
+* [The Problem](#the-problem)
 
-\* \[Features](#features)
+* [Features](#features)
 
-\* \[Migration Rules](#migration-rules)
+* [Migration Rules](#migration-rules)
 
-\* \[How It Works](#how-it-works)
+* [How It Works](#how-it-works)
 
-\* \[Application Flow](#application-flow)
+* [Application Flow](#application-flow)
 
-\* \[Screenshots](#screenshots)
+* [Screenshots](#screenshots)
 
-\* \[Technical Architecture](#technical-architecture)
+* [Technical Architecture](#technical-architecture)
 
-\* \[Number Processing Engine](#number-processing-engine)
+* [Number Processing Engine](#number-processing-engine)
 
-\* \[Contact Management](#contact-management)
+* [Contact Management](#contact-management)
 
-\* \[Backup and Restore](#backup-and-restore)
+* [Backup and Restore](#backup-and-restore)
 
-\* \[Android Implementation](#android-implementation)
+* [Android Implementation](#android-implementation)
 
-\* \[Testing](#testing)
+* [Testing](#testing)
 
-\* \[Real-Device Testing](#real-device-testing)
+* [Real-Device Testing](#real-device-testing)
 
-\* \[Technology Stack](#technology-stack)
+* [Technology Stack](#technology-stack)
 
-\* \[Project Structure](#project-structure)
+* [Project Structure](#project-structure)
 
-\* \[Getting Started](#getting-started)
+* [Getting Started](#getting-started)
 
-\* \[Development](#development)
+* [Development](#development)
 
-\* \[Android Release Build](#android-release-build)
+* [Android Release Build](#android-release-build)
 
-\* \[Privacy](#privacy)
+* [Privacy](#privacy)
 
-\* \[Limitations](#limitations)
+* [Limitations](#limitations)
 
-\* \[Future Improvements](#future-improvements)
+* [Future Improvements](#future-improvements)
 
-\* \[Contributing](#contributing)
+* [Contributing](#contributing)
 
-\* \[License](#license)
+* [License](#license)
 
-\* \[Developer](#developer)
-
-
-
-\---
+* [Developer](#developer)
 
 
 
-\# Overview
+---
+
+
+
+# Overview
 
 
 
@@ -110,23 +110,23 @@ The application:
 
 
 
-1\. Reads contacts from the device.
+1. Reads contacts from the device.
 
-2\. Examines their phone numbers.
+2. Examines their phone numbers.
 
-3\. Normalizes numbers for reliable comparison.
+3. Normalizes numbers for reliable comparison.
 
-4\. Matches numbers against configured migration rules.
+4. Matches numbers against configured migration rules.
 
-5\. Generates a list of proposed changes.
+5. Generates a list of proposed changes.
 
-6\. Allows the user to review the migration.
+6. Allows the user to review the migration.
 
-7\. Creates a backup before making changes.
+7. Creates a backup before making changes.
 
-8\. Updates eligible numbers.
+8. Updates eligible numbers.
 
-9\. Reports the results.
+9. Reports the results.
 
 
 
@@ -138,23 +138,23 @@ The core design is intentionally simple:
 
 Scan
 
-&#x20; ↓
+  â†“
 
 Match
 
-&#x20; ↓
+  â†“
 
 Preview
 
-&#x20; ↓
+  â†“
 
 Backup
 
-&#x20; ↓
+  â†“
 
 Update
 
-&#x20; ↓
+  â†“
 
 Verify
 
@@ -162,11 +162,11 @@ Verify
 
 
 
-\---
+---
 
 
 
-\# The Problem
+# The Problem
 
 
 
@@ -196,17 +196,17 @@ A user may also have:
 
 
 
-\* Numbers that have already been migrated.
+* Numbers that have already been migrated.
 
-\* Numbers belonging to different operators.
+* Numbers belonging to different operators.
 
-\* Foreign phone numbers.
+* Foreign phone numbers.
 
-\* Formatted phone numbers.
+* Formatted phone numbers.
 
-\* Invalid or incomplete numbers.
+* Invalid or incomplete numbers.
 
-\* Multiple phone numbers stored under the same contact.
+* Multiple phone numbers stored under the same contact.
 
 
 
@@ -218,15 +218,15 @@ PrefixFix treats the migration as a structured data transformation problem.
 
 
 
-\---
+---
 
 
 
-\# Features
+# Features
 
 
 
-\## Automatic Contact Scanning
+## Automatic Contact Scanning
 
 
 
@@ -238,7 +238,7 @@ Contact reading is paginated to better handle larger address books.
 
 
 
-\## Rule-Based Migration
+## Rule-Based Migration
 
 
 
@@ -246,7 +246,7 @@ Migration behavior is defined through explicit operator rules rather than hard-c
 
 
 
-\## Number Normalization
+## Number Normalization
 
 
 
@@ -254,7 +254,7 @@ The application can recognize common representations of Gambian numbers, includi
 
 
 
-\## Migration Preview
+## Migration Preview
 
 
 
@@ -262,7 +262,7 @@ Users can review the proposed changes before modifying their contacts.
 
 
 
-\## Automatic Backup
+## Automatic Backup
 
 
 
@@ -270,7 +270,7 @@ A backup is created before changes are applied.
 
 
 
-\## Bulk Updates
+## Bulk Updates
 
 
 
@@ -278,7 +278,7 @@ Multiple contacts and phone numbers can be updated in a single migration operati
 
 
 
-\## Already-Migrated Protection
+## Already-Migrated Protection
 
 
 
@@ -286,7 +286,7 @@ Numbers that are already in the expected format are not migrated again.
 
 
 
-\## Foreign Number Protection
+## Foreign Number Protection
 
 
 
@@ -294,7 +294,7 @@ Numbers that do not match the supported Gambian migration rules are ignored.
 
 
 
-\## Failure Tracking
+## Failure Tracking
 
 
 
@@ -302,7 +302,7 @@ The application tracks successful and failed contact updates and reports the fin
 
 
 
-\## Restore Support
+## Restore Support
 
 
 
@@ -310,11 +310,11 @@ Backups can be selected and used to restore contact information.
 
 
 
-\---
+---
 
 
 
-\# Migration Rules
+# Migration Rules
 
 
 
@@ -326,13 +326,13 @@ PrefixFix currently implements the following migration rules:
 
 | ------------- | ------------- | ---------- | ----------------------- |
 
-| Africell      | `2`, `4`, `7` | `87`       | `7123456` → `877123456` |
+| Africell      | `2`, `4`, `7` | `87`       | `7123456` â†’ `877123456` |
 
-| QCell         | `3`, `5`      | `83`       | `3123456` → `833123456` |
+| QCell         | `3`, `5`      | `83`       | `3123456` â†’ `833123456` |
 
-| Comium        | `6`           | `86`       | `6123456` → `866123456` |
+| Comium        | `6`           | `86`       | `6123456` â†’ `866123456` |
 
-| Gamcel/Gamtel | `9`           | No change  | `9123456` → unchanged   |
+| Gamcel/Gamtel | `9`           | No change  | `9123456` â†’ unchanged   |
 
 
 
@@ -340,7 +340,7 @@ Only 7-digit numbers matching the supported rules are eligible for migration.
 
 
 
-\### Africell
+### Africell
 
 
 
@@ -348,7 +348,7 @@ Only 7-digit numbers matching the supported rules are eligible for migration.
 
 7123456
 
-&#x20;   ↓
+    â†“
 
 877123456
 
@@ -360,7 +360,7 @@ The same `87` prefix is applied to eligible numbers beginning with `2`, `4`, or 
 
 
 
-\### QCell
+### QCell
 
 
 
@@ -368,7 +368,7 @@ The same `87` prefix is applied to eligible numbers beginning with `2`, `4`, or 
 
 3123456
 
-&#x20;   ↓
+    â†“
 
 833123456
 
@@ -380,7 +380,7 @@ The `83` prefix is applied to eligible numbers beginning with `3` or `5`.
 
 
 
-\### Comium
+### Comium
 
 
 
@@ -388,7 +388,7 @@ The `83` prefix is applied to eligible numbers beginning with `3` or `5`.
 
 6123456
 
-&#x20;   ↓
+    â†“
 
 866123456
 
@@ -400,7 +400,7 @@ The `86` prefix is applied to eligible numbers beginning with `6`.
 
 
 
-\### Gamcel/Gamtel
+### Gamcel/Gamtel
 
 
 
@@ -408,11 +408,11 @@ Numbers beginning with `9` are currently left unchanged.
 
 
 
-\---
+---
 
 
 
-\# How It Works
+# How It Works
 
 
 
@@ -420,7 +420,7 @@ PrefixFix separates the migration process into several stages.
 
 
 
-\## 1. Read Contacts
+## 1. Read Contacts
 
 
 
@@ -428,7 +428,7 @@ The application requests contact permission and retrieves the device's contacts.
 
 
 
-\## 2. Normalize Numbers
+## 2. Normalize Numbers
 
 
 
@@ -440,7 +440,7 @@ Formatting characters and supported country/trunk prefixes are handled by the no
 
 
 
-\## 3. Match Migration Rules
+## 3. Match Migration Rules
 
 
 
@@ -452,7 +452,7 @@ A number that does not match a rule is ignored.
 
 
 
-\## 4. Generate Changes
+## 4. Generate Changes
 
 
 
@@ -480,7 +480,7 @@ Updated:
 
 
 
-\## 5. Preview
+## 5. Preview
 
 
 
@@ -488,7 +488,7 @@ The application presents the changes before modifying the address book.
 
 
 
-\## 6. Backup
+## 6. Backup
 
 
 
@@ -496,7 +496,7 @@ A backup is created before any contact updates are performed.
 
 
 
-\## 7. Apply Changes
+## 7. Apply Changes
 
 
 
@@ -504,7 +504,7 @@ Approved changes are written back to the device's contacts.
 
 
 
-\## 8. Report Results
+## 8. Report Results
 
 
 
@@ -524,77 +524,77 @@ Contacts failed
 
 
 
-\---
+---
 
 
 
-\# Application Flow
+# Application Flow
 
 
 
 ```text
 
-┌───────────────┐
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
 
-│   Onboarding  │
+â”‚   Onboarding  â”‚
 
-└───────┬───────┘
+â””â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”˜
 
-&#x20;       ↓
+        â†“
 
-┌───────────────┐
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
 
-│   Permission  │
+â”‚   Permission  â”‚
 
-└───────┬───────┘
+â””â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”˜
 
-&#x20;       ↓
+        â†“
 
-┌───────────────┐
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
 
-│     Scan      │
+â”‚     Scan      â”‚
 
-└───────┬───────┘
+â””â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”˜
 
-&#x20;       ↓
+        â†“
 
-┌───────────────┐
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
 
-│ Rule Matching │
+â”‚ Rule Matching â”‚
 
-└───────┬───────┘
+â””â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”˜
 
-&#x20;       ↓
+        â†“
 
-┌───────────────┐
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
 
-│    Preview    │
+â”‚    Preview    â”‚
 
-└───────┬───────┘
+â””â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”˜
 
-&#x20;       ↓
+        â†“
 
-┌───────────────┐
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
 
-│    Backup     │
+â”‚    Backup     â”‚
 
-└───────┬───────┘
+â””â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”˜
 
-&#x20;       ↓
+        â†“
 
-┌───────────────┐
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
 
-│    Update     │
+â”‚    Update     â”‚
 
-└───────┬───────┘
+â””â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”˜
 
-&#x20;       ↓
+        â†“
 
-┌───────────────┐
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
 
-│    Success    │
+â”‚    Success    â”‚
 
-└───────────────┘
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 
 ```
 
@@ -602,7 +602,7 @@ Contacts failed
 
 
 
-\# Technical Architecture
+# Technical Architecture
 
 
 
@@ -614,45 +614,45 @@ PrefixFix separates presentation, state management, business logic, device integ
 
 PrefixFix
 
-│
+â”‚
 
-├── React Native UI
+â”œâ”€â”€ React Native UI
 
-│
+â”‚
 
-├── Application State
+â”œâ”€â”€ Application State
 
-│       └── AppContext
+â”‚       â””â”€â”€ AppContext
 
-│
+â”‚
 
-├── Business Logic
+â”œâ”€â”€ Business Logic
 
-│       └── Number Migration Engine
+â”‚       â””â”€â”€ Number Migration Engine
 
-│
+â”‚
 
-├── Migration Configuration
+â”œâ”€â”€ Migration Configuration
 
-│       └── Operator Rules
+â”‚       â””â”€â”€ Operator Rules
 
-│
+â”‚
 
-├── Device Integration
+â”œâ”€â”€ Device Integration
 
-│       └── Expo Contacts
+â”‚       â””â”€â”€ Expo Contacts
 
-│
+â”‚
 
-├── Data Protection
+â”œâ”€â”€ Data Protection
 
-│       └── Backup / Restore
+â”‚       â””â”€â”€ Backup / Restore
 
-│
+â”‚
 
-└── Infrastructure
+â””â”€â”€ Infrastructure
 
-&#x20;       └── Firebase
+        â””â”€â”€ Firebase
 
 ```
 
@@ -662,11 +662,11 @@ This separation allows the migration engine to be tested independently from the 
 
 
 
-\---
+---
 
 
 
-\# Number Processing Engine
+# Number Processing Engine
 
 
 
@@ -698,7 +698,7 @@ This makes the migration system configurable and easier to maintain.
 
 
 
-\## Supported Transformations
+## Supported Transformations
 
 
 
@@ -720,7 +720,7 @@ The current Gambian migration rules primarily use prefix prepending.
 
 
 
-\## Normalization
+## Normalization
 
 
 
@@ -736,7 +736,7 @@ For example:
 
 +220 7123456
 
-&#x20;     ↓
+      â†“
 
 7123456
 
@@ -748,7 +748,7 @@ The normalized value is used for rule matching while the original value can be p
 
 
 
-\## Rule Matching
+## Rule Matching
 
 
 
@@ -760,7 +760,7 @@ The engine supports longest-pattern matching so that more specific rules can tak
 
 
 
-\## No-Op Protection
+## No-Op Protection
 
 
 
@@ -772,11 +772,11 @@ This prevents unnecessary updates and repeated transformations.
 
 
 
-\---
+---
 
 
 
-\# Contact Management
+# Contact Management
 
 
 
@@ -796,23 +796,23 @@ Responsibilities include:
 
 
 
-\* Contact permission handling
+* Contact permission handling
 
-\* Contact retrieval
+* Contact retrieval
 
-\* Phone-number extraction
+* Phone-number extraction
 
-\* Migration matching
+* Migration matching
 
-\* Change generation
+* Change generation
 
-\* Contact updates
+* Contact updates
 
-\* Failure tracking
+* Failure tracking
 
 
 
-\## Paginated Contact Reading
+## Paginated Contact Reading
 
 
 
@@ -828,19 +828,19 @@ Conceptually:
 
 Request contacts
 
-&#x20;     ↓
+      â†“
 
 Process page
 
-&#x20;     ↓
+      â†“
 
 More contacts?
 
-&#x20;  /       \\
+   /       
 
-&#x20;Yes        No
+ Yes        No
 
-&#x20; ↓          ↓
+  â†“          â†“
 
 Next       Finish
 
@@ -854,11 +854,11 @@ This approach is better suited to larger contact databases.
 
 
 
-\---
+---
 
 
 
-\# Backup and Restore
+# Backup and Restore
 
 
 
@@ -882,15 +882,15 @@ The backup system supports:
 
 
 
-\* Creating backups
+* Creating backups
 
-\* Storing backups locally
+* Storing backups locally
 
-\* Sharing backup files
+* Sharing backup files
 
-\* Selecting backup files
+* Selecting backup files
 
-\* Restoring contact information
+* Restoring contact information
 
 
 
@@ -902,15 +902,15 @@ The intended migration sequence is:
 
 Scan
 
-&#x20;↓
+ â†“
 
 Preview
 
-&#x20;↓
+ â†“
 
 Backup
 
-&#x20;↓
+ â†“
 
 Update
 
@@ -922,11 +922,11 @@ This provides a recovery mechanism before bulk modifications are made.
 
 
 
-\---
+---
 
 
 
-\# Android Implementation
+# Android Implementation
 
 
 
@@ -958,19 +958,19 @@ The updated process:
 
 
 
-1\. Load the existing contact.
+1. Load the existing contact.
 
-2\. Retrieve its phone records.
+2. Retrieve its phone records.
 
-3\. Locate the phone record identified during scanning.
+3. Locate the phone record identified during scanning.
 
-4\. Compare the current value with the proposed value.
+4. Compare the current value with the proposed value.
 
-5\. Update the phone record.
+5. Update the phone record.
 
-6\. Persist the change.
+6. Persist the change.
 
-7\. Record the result.
+7. Record the result.
 
 
 
@@ -982,11 +982,11 @@ The final implementation was then validated against real Android contacts.
 
 
 
-\---
+---
 
 
 
-\# Testing
+# Testing
 
 
 
@@ -1032,7 +1032,7 @@ npm run typecheck
 
 
 
-\## Tested Areas
+## Tested Areas
 
 
 
@@ -1040,47 +1040,47 @@ The test suite covers scenarios including:
 
 
 
-\* Gambian number normalization
+* Gambian number normalization
 
-\* Africell migration
+* Africell migration
 
-\* QCell migration
+* QCell migration
 
-\* Comium migration
+* Comium migration
 
-\* Already-migrated numbers
+* Already-migrated numbers
 
-\* Gamcel/Gamtel numbers
+* Gamcel/Gamtel numbers
 
-\* Formatted phone numbers
+* Formatted phone numbers
 
-\* `+220` numbers
+* `+220` numbers
 
-\* `00220` numbers
+* `00220` numbers
 
-\* Leading `0` numbers
+* Leading `0` numbers
 
-\* Foreign numbers
+* Foreign numbers
 
-\* Invalid numbers
+* Invalid numbers
 
-\* Short numbers
+* Short numbers
 
-\* Multiple migration rules
+* Multiple migration rules
 
-\* Rule specificity
+* Rule specificity
 
-\* Prefix transformations
+* Prefix transformations
 
-\* No-op cases
-
-
-
-\---
+* No-op cases
 
 
 
-\# Real-Device Testing
+---
+
+
+
+# Real-Device Testing
 
 
 
@@ -1118,11 +1118,11 @@ This physical-device testing was important because contact-management APIs inter
 
 
 
-\---
+---
 
 
 
-\# Technology Stack
+# Technology Stack
 
 
 
@@ -1152,11 +1152,11 @@ This physical-device testing was important because contact-management APIs inter
 
 
 
-\---
+---
 
 
 
-\# Project Structure
+# Project Structure
 
 
 
@@ -1164,99 +1164,99 @@ This physical-device testing was important because contact-management APIs inter
 
 PrefixFix/
 
-│
+â”‚
 
-├── assets/
+â”œâ”€â”€ assets/
 
-│   ├── icon.png
+â”‚   â”œâ”€â”€ icon.png
 
-│   ├── android-icon-background.png
+â”‚   â”œâ”€â”€ android-icon-background.png
 
-│   ├── android-icon-foreground.png
+â”‚   â”œâ”€â”€ android-icon-foreground.png
 
-│   ├── android-icon-monochrome.png
+â”‚   â”œâ”€â”€ android-icon-monochrome.png
 
-│   └── favicon.png
+â”‚   â””â”€â”€ favicon.png
 
-│
+â”‚
 
-├── functions/
+â”œâ”€â”€ functions/
 
-│   ├── index.js
+â”‚   â”œâ”€â”€ index.js
 
-│   └── package.json
+â”‚   â””â”€â”€ package.json
 
-│
+â”‚
 
-├── src/
+â”œâ”€â”€ src/
 
-│   ├── data/
+â”‚   â”œâ”€â”€ data/
 
-│   │   └── rules.ts
+â”‚   â”‚   â””â”€â”€ rules.ts
 
-│   │
+â”‚   â”‚
 
-│   ├── lib/
+â”‚   â”œâ”€â”€ lib/
 
-│   │   ├── numbers.ts
+â”‚   â”‚   â”œâ”€â”€ numbers.ts
 
-│   │   ├── numbers.test.ts
+â”‚   â”‚   â”œâ”€â”€ numbers.test.ts
 
-│   │   ├── contacts.ts
+â”‚   â”‚   â”œâ”€â”€ contacts.ts
 
-│   │   ├── backup.ts
+â”‚   â”‚   â”œâ”€â”€ backup.ts
 
-│   │   └── firebase.ts
+â”‚   â”‚   â””â”€â”€ firebase.ts
 
-│   │
+â”‚   â”‚
 
-│   ├── screens/
+â”‚   â”œâ”€â”€ screens/
 
-│   │   ├── OnboardingScreen.tsx
+â”‚   â”‚   â”œâ”€â”€ OnboardingScreen.tsx
 
-│   │   ├── PreviewScreen.tsx
+â”‚   â”‚   â”œâ”€â”€ PreviewScreen.tsx
 
-│   │   ├── SettingsScreen.tsx
+â”‚   â”‚   â”œâ”€â”€ SettingsScreen.tsx
 
-│   │   └── SuccessScreen.tsx
+â”‚   â”‚   â””â”€â”€ SuccessScreen.tsx
 
-│   │
+â”‚   â”‚
 
-│   ├── state/
+â”‚   â”œâ”€â”€ state/
 
-│   │   └── AppContext.tsx
+â”‚   â”‚   â””â”€â”€ AppContext.tsx
 
-│   │
+â”‚   â”‚
 
-│   └── theme.ts
+â”‚   â””â”€â”€ theme.ts
 
-│
+â”‚
 
-├── App.tsx
+â”œâ”€â”€ App.tsx
 
-├── app.json
+â”œâ”€â”€ app.json
 
-├── package.json
+â”œâ”€â”€ package.json
 
-├── tsconfig.json
+â”œâ”€â”€ tsconfig.json
 
-├── LICENSE
+â”œâ”€â”€ LICENSE
 
-└── README.md
+â””â”€â”€ README.md
 
 ```
 
 
 
-\---
+---
 
 
 
-\# Getting Started
+# Getting Started
 
 
 
-\## Requirements
+## Requirements
 
 
 
@@ -1264,17 +1264,17 @@ To develop PrefixFix locally, install:
 
 
 
-\* Node.js
+* Node.js
 
-\* npm
+* npm
 
-\* Android Studio
+* Android Studio
 
-\* Android SDK
+* Android SDK
 
-\* Git
+* Git
 
-\* A physical Android device or Android emulator
+* A physical Android device or Android emulator
 
 
 
@@ -1282,7 +1282,7 @@ For physical-device testing, Android Developer Options and USB debugging should 
 
 
 
-\## Clone the Repository
+## Clone the Repository
 
 
 
@@ -1296,7 +1296,7 @@ cd PrefixFix
 
 
 
-\## Install Dependencies
+## Install Dependencies
 
 
 
@@ -1308,7 +1308,7 @@ npm install
 
 
 
-\## Start the Development Server
+## Start the Development Server
 
 
 
@@ -1320,7 +1320,7 @@ npm start
 
 
 
-\## Run on Android
+## Run on Android
 
 
 
@@ -1332,11 +1332,11 @@ npm run android
 
 
 
-\---
+---
 
 
 
-\# Development
+# Development
 
 
 
@@ -1348,27 +1348,27 @@ A typical development workflow is:
 
 Install dependencies
 
-&#x20;      ↓
+       â†“
 
 Run tests
 
-&#x20;      ↓
+       â†“
 
 Run TypeScript validation
 
-&#x20;      ↓
+       â†“
 
 Start Expo
 
-&#x20;      ↓
+       â†“
 
 Test application
 
-&#x20;      ↓
+       â†“
 
 Test physical device
 
-&#x20;      ↓
+       â†“
 
 Build release version
 
@@ -1394,11 +1394,11 @@ Changes to migration behavior should always be accompanied by appropriate test c
 
 
 
-\---
+---
 
 
 
-\# Android Release Build
+# Android Release Build
 
 
 
@@ -1436,11 +1436,11 @@ The release APK was installed and tested on physical Samsung Android devices.
 
 
 
-\---
+---
 
 
 
-\# Privacy
+# Privacy
 
 
 
@@ -1452,17 +1452,17 @@ Contact data is accessed to:
 
 
 
-1\. Read contact records.
+1. Read contact records.
 
-2\. Read phone numbers.
+2. Read phone numbers.
 
-3\. Identify eligible numbers.
+3. Identify eligible numbers.
 
-4\. Generate migration changes.
+4. Generate migration changes.
 
-5\. Create a backup.
+5. Create a backup.
 
-6\. Apply approved updates.
+6. Apply approved updates.
 
 
 
@@ -1474,11 +1474,11 @@ Because contact information is personal data, users should understand the permis
 
 
 
-\---
+---
 
 
 
-\# Limitations
+# Limitations
 
 
 
@@ -1490,19 +1490,19 @@ Current limitations include:
 
 
 
-\* Migration rules may need to change if official numbering requirements change.
+* Migration rules may need to change if official numbering requirements change.
 
-\* Android contact behavior can vary between device manufacturers and Android versions.
+* Android contact behavior can vary between device manufacturers and Android versions.
 
-\* iOS has not received the same level of physical-device validation.
+* iOS has not received the same level of physical-device validation.
 
-\* Backup management can be expanded.
+* Backup management can be expanded.
 
-\* Additional edge cases can be added to the test suite.
+* Additional edge cases can be added to the test suite.
 
-\* The current implementation focuses on the supported Gambian numbering patterns.
+* The current implementation focuses on the supported Gambian numbering patterns.
 
-\* The application has not been positioned as an official service of any Gambian telecommunications operator.
+* The application has not been positioned as an official service of any Gambian telecommunications operator.
 
 
 
@@ -1510,11 +1510,11 @@ Users should maintain independent backups of important contact information.
 
 
 
-\---
+---
 
 
 
-\# Future Improvements
+# Future Improvements
 
 
 
@@ -1522,7 +1522,7 @@ Potential improvements include:
 
 
 
-\### Expanded Migration Rules
+### Expanded Migration Rules
 
 
 
@@ -1530,7 +1530,7 @@ Support additional numbering changes if required.
 
 
 
-\### Improved Backup Management
+### Improved Backup Management
 
 
 
@@ -1538,19 +1538,19 @@ Possible additions:
 
 
 
-\* Multiple backup versions
+* Multiple backup versions
 
-\* Backup history
+* Backup history
 
-\* Backup metadata
+* Backup metadata
 
-\* Backup validation
+* Backup validation
 
-\* More granular restore controls
+* More granular restore controls
 
 
 
-\### Detailed Migration Reports
+### Detailed Migration Reports
 
 
 
@@ -1578,7 +1578,7 @@ Failed updates
 
 
 
-\### Expanded Test Coverage
+### Expanded Test Coverage
 
 
 
@@ -1586,7 +1586,7 @@ Additional datasets and edge cases could improve confidence across different con
 
 
 
-\### iOS Support
+### iOS Support
 
 
 
@@ -1594,7 +1594,7 @@ The application could be further developed and physically tested on iOS.
 
 
 
-\### Distribution
+### Distribution
 
 
 
@@ -1602,11 +1602,11 @@ The application could eventually be packaged and distributed through official mo
 
 
 
-\---
+---
 
 
 
-\# Contributing
+# Contributing
 
 
 
@@ -1618,25 +1618,25 @@ Potential contribution areas include:
 
 
 
-\* Migration rules
+* Migration rules
 
-\* Number normalization
+* Number normalization
 
-\* Automated tests
+* Automated tests
 
-\* Backup and restore
+* Backup and restore
 
-\* Android compatibility
+* Android compatibility
 
-\* iOS support
+* iOS support
 
-\* Accessibility
+* Accessibility
 
-\* User interface improvements
+* User interface improvements
 
-\* Documentation
+* Documentation
 
-\* Performance improvements
+* Performance improvements
 
 
 
@@ -1658,21 +1658,21 @@ Pull requests should describe:
 
 
 
-\* What was changed
+* What was changed
 
-\* Why the change was necessary
+* Why the change was necessary
 
-\* How it was tested
+* How it was tested
 
-\* Whether migration behavior was affected
-
-
-
-\---
+* Whether migration behavior was affected
 
 
 
-\# License
+---
+
+
+
+# License
 
 
 
@@ -1688,19 +1688,19 @@ Copyright (c) 2026 Ebrima Alsan Barry
 
 
 
-See \[LICENSE](LICENSE) for the complete license text.
+See [LICENSE](LICENSE) for the complete license text.
 
 
 
-\---
+---
 
 
 
-\# Developer
+# Developer
 
 
 
-\*\*Ebrima Alsan Barry\*\*
+**Ebrima Alsan Barry**
 
 
 
@@ -1712,19 +1712,19 @@ PrefixFix was developed as an independent open-source project to solve a practic
 
 
 
-\*\*GitHub:\*\* https://github.com/Barry054
+**GitHub:** https://github.com/Barry054
 
-\*\*LinkedIn:\*\* https://www.linkedin.com/in/ebrima-alsan-barry-243bba25
+**LinkedIn:** https://www.linkedin.com/in/ebrima-alsan-barry-243bba25
 
-\*\*Email:\*\* \[barristeryanzeh054@gmail.com](mailto:barristeryanzeh054@gmail.com)
-
-
-
-\---
+**Email:** [barristeryanzeh054@gmail.com](mailto:barristeryanzeh054@gmail.com)
 
 
 
-\## Project Summary
+---
+
+
+
+## Project Summary
 
 
 
@@ -1740,31 +1740,31 @@ The project demonstrates a complete development workflow:
 
 Problem
 
-&#x20; ↓
+  â†“
 
 Requirements
 
-&#x20; ↓
+  â†“
 
 Design
 
-&#x20; ↓
+  â†“
 
 Implementation
 
-&#x20; ↓
+  â†“
 
 Testing
 
-&#x20; ↓
+  â†“
 
 Debugging
 
-&#x20; ↓
+  â†“
 
 Physical-device Validation
 
-&#x20; ↓
+  â†“
 
 Release Build
 
