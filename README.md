@@ -138,23 +138,23 @@ The core design is intentionally simple:
 
 Scan
 
-  â†“
+  v
 
 Match
 
-  â†“
+  v
 
 Preview
 
-  â†“
+  v
 
 Backup
 
-  â†“
+  v
 
 Update
 
-  â†“
+  v
 
 Verify
 
@@ -326,13 +326,13 @@ PrefixFix currently implements the following migration rules:
 
 | ------------- | ------------- | ---------- | ----------------------- |
 
-| Africell      | `2`, `4`, `7` | `87`       | `7123456` â†’ `877123456` |
+| Africell      | `2`, `4`, `7` | `87`       | `7123456` -> `877123456` |
 
-| QCell         | `3`, `5`      | `83`       | `3123456` â†’ `833123456` |
+| QCell         | `3`, `5`      | `83`       | `3123456` -> `833123456` |
 
-| Comium        | `6`           | `86`       | `6123456` â†’ `866123456` |
+| Comium        | `6`           | `86`       | `6123456` -> `866123456` |
 
-| Gamcel/Gamtel | `9`           | No change  | `9123456` â†’ unchanged   |
+| Gamcel/Gamtel | `9`           | No change  | `9123456` -> unchanged   |
 
 
 
@@ -348,7 +348,7 @@ Only 7-digit numbers matching the supported rules are eligible for migration.
 
 7123456
 
-    â†“
+    v
 
 877123456
 
@@ -368,7 +368,7 @@ The same `87` prefix is applied to eligible numbers beginning with `2`, `4`, or 
 
 3123456
 
-    â†“
+    v
 
 833123456
 
@@ -388,7 +388,7 @@ The `83` prefix is applied to eligible numbers beginning with `3` or `5`.
 
 6123456
 
-    â†“
+    v
 
 866123456
 
@@ -534,67 +534,67 @@ Contacts failed
 
 ```text
 
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
++----------------+
 
-â”‚   Onboarding  â”‚
+|   Onboarding  |
 
-â””â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”˜
++----------------+
 
-        â†“
+        v
 
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
++----------------+
 
-â”‚   Permission  â”‚
+|   Permission  |
 
-â””â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”˜
++----------------+
 
-        â†“
+        v
 
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
++----------------+
 
-â”‚     Scan      â”‚
+|     Scan      |
 
-â””â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”˜
++----------------+
 
-        â†“
+        v
 
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
++----------------+
 
-â”‚ Rule Matching â”‚
+| Rule Matching |
 
-â””â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”˜
++----------------+
 
-        â†“
+        v
 
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
++----------------+
 
-â”‚    Preview    â”‚
+|    Preview    |
 
-â””â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”˜
++----------------+
 
-        â†“
+        v
 
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
++----------------+
 
-â”‚    Backup     â”‚
+|    Backup     |
 
-â””â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”˜
++----------------+
 
-        â†“
+        v
 
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
++----------------+
 
-â”‚    Update     â”‚
+|    Update     |
 
-â””â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”˜
++----------------+
 
-        â†“
+        v
 
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
++----------------+
 
-â”‚    Success    â”‚
+|    Success    |
 
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
++----------------+
 
 ```
 
@@ -614,45 +614,45 @@ PrefixFix separates presentation, state management, business logic, device integ
 
 PrefixFix
 
-â”‚
+|
 
-â”œâ”€â”€ React Native UI
++----------------+
 
-â”‚
+|
 
-â”œâ”€â”€ Application State
++----------------+
 
-â”‚       â””â”€â”€ AppContext
++----------------+
 
-â”‚
+|
 
-â”œâ”€â”€ Business Logic
++----------------+
 
-â”‚       â””â”€â”€ Number Migration Engine
++----------------+
 
-â”‚
+|
 
-â”œâ”€â”€ Migration Configuration
++----------------+
 
-â”‚       â””â”€â”€ Operator Rules
++----------------+
 
-â”‚
+|
 
-â”œâ”€â”€ Device Integration
++----------------+
 
-â”‚       â””â”€â”€ Expo Contacts
++----------------+
 
-â”‚
+|
 
-â”œâ”€â”€ Data Protection
++----------------+
 
-â”‚       â””â”€â”€ Backup / Restore
++----------------+
 
-â”‚
+|
 
-â””â”€â”€ Infrastructure
++----------------+
 
-        â””â”€â”€ Firebase
++----------------+
 
 ```
 
@@ -736,7 +736,7 @@ For example:
 
 +220 7123456
 
-      â†“
+      v
 
 7123456
 
@@ -828,11 +828,11 @@ Conceptually:
 
 Request contacts
 
-      â†“
+      v
 
 Process page
 
-      â†“
+      v
 
 More contacts?
 
@@ -840,7 +840,7 @@ More contacts?
 
  Yes        No
 
-  â†“          â†“
+  v          v
 
 Next       Finish
 
@@ -902,15 +902,15 @@ The intended migration sequence is:
 
 Scan
 
- â†“
+ v
 
 Preview
 
- â†“
+ v
 
 Backup
 
- â†“
+ v
 
 Update
 
@@ -1164,85 +1164,85 @@ This physical-device testing was important because contact-management APIs inter
 
 PrefixFix/
 
-â”‚
+|
 
-â”œâ”€â”€ assets/
++----------------+
 
-â”‚   â”œâ”€â”€ icon.png
++----------------+
 
-â”‚   â”œâ”€â”€ android-icon-background.png
++----------------+
 
-â”‚   â”œâ”€â”€ android-icon-foreground.png
++----------------+
 
-â”‚   â”œâ”€â”€ android-icon-monochrome.png
++----------------+
 
-â”‚   â””â”€â”€ favicon.png
++----------------+
 
-â”‚
+|
 
-â”œâ”€â”€ functions/
++----------------+
 
-â”‚   â”œâ”€â”€ index.js
++----------------+
 
-â”‚   â””â”€â”€ package.json
++----------------+
 
-â”‚
+|
 
-â”œâ”€â”€ src/
++----------------+
 
-â”‚   â”œâ”€â”€ data/
++----------------+
 
-â”‚   â”‚   â””â”€â”€ rules.ts
++----------------+
 
-â”‚   â”‚
+|   |
 
-â”‚   â”œâ”€â”€ lib/
++----------------+
 
-â”‚   â”‚   â”œâ”€â”€ numbers.ts
++----------------+
 
-â”‚   â”‚   â”œâ”€â”€ numbers.test.ts
++----------------+
 
-â”‚   â”‚   â”œâ”€â”€ contacts.ts
++----------------+
 
-â”‚   â”‚   â”œâ”€â”€ backup.ts
++----------------+
 
-â”‚   â”‚   â””â”€â”€ firebase.ts
++----------------+
 
-â”‚   â”‚
+|   |
 
-â”‚   â”œâ”€â”€ screens/
++----------------+
 
-â”‚   â”‚   â”œâ”€â”€ OnboardingScreen.tsx
++----------------+
 
-â”‚   â”‚   â”œâ”€â”€ PreviewScreen.tsx
++----------------+
 
-â”‚   â”‚   â”œâ”€â”€ SettingsScreen.tsx
++----------------+
 
-â”‚   â”‚   â””â”€â”€ SuccessScreen.tsx
++----------------+
 
-â”‚   â”‚
+|   |
 
-â”‚   â”œâ”€â”€ state/
++----------------+
 
-â”‚   â”‚   â””â”€â”€ AppContext.tsx
++----------------+
 
-â”‚   â”‚
+|   |
 
-â”‚   â””â”€â”€ theme.ts
++----------------+
 
-â”‚
+|
 
-â”œâ”€â”€ App.tsx
++----------------+
 
-â”œâ”€â”€ app.json
++----------------+
 
-â”œâ”€â”€ package.json
++----------------+
 
-â”œâ”€â”€ tsconfig.json
++----------------+
 
-â”œâ”€â”€ LICENSE
++----------------+
 
-â””â”€â”€ README.md
++----------------+
 
 ```
 
@@ -1348,27 +1348,27 @@ A typical development workflow is:
 
 Install dependencies
 
-       â†“
+       v
 
 Run tests
 
-       â†“
+       v
 
 Run TypeScript validation
 
-       â†“
+       v
 
 Start Expo
 
-       â†“
+       v
 
 Test application
 
-       â†“
+       v
 
 Test physical device
 
-       â†“
+       v
 
 Build release version
 
@@ -1740,31 +1740,31 @@ The project demonstrates a complete development workflow:
 
 Problem
 
-  â†“
+  v
 
 Requirements
 
-  â†“
+  v
 
 Design
 
-  â†“
+  v
 
 Implementation
 
-  â†“
+  v
 
 Testing
 
-  â†“
+  v
 
 Debugging
 
-  â†“
+  v
 
 Physical-device Validation
 
-  â†“
+  v
 
 Release Build
 
